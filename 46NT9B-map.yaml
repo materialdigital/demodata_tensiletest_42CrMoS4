@@ -1,0 +1,62 @@
+prefixes: {bfo: 'http://purl.obolibrary.org/obo/', csvw: 'http://www.w3.org/ns/csvw#',
+  data: 'https://raw.githubusercontent.com/MattTJung/pmd_referenceproject/main/46NT9B-metadata.json/',
+  method: 'https://github.com/Mat-O-Lab/MSEO/raw/main/methods/DIN_EN_ISO_527-3.drawio.ttl/',
+  owl: 'http://www.w3.org/2002/07/owl#', rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+  rdfs: 'http://www.w3.org/2000/01/rdf-schema#', xml: 'http://www.w3.org/XML/1998/namespace',
+  xsd: 'http://www.w3.org/2001/XMLSchema#'}
+base: http://purl.matolab.org/mseo/mappings/
+sources:
+  data_entities: {access: 'https://raw.githubusercontent.com/MattTJung/pmd_referenceproject/main/46NT9B-metadata.json',
+    iterator: '$..[*]', referenceFormulation: jsonpath}
+use_template_rowwise: 'false'
+mappings:
+  SpecimenID:
+    sources: [data_entities]
+    s: $(@id)
+    condition:
+      function: equal
+      parameters:
+      - [str1, $(label)]
+      - [str2, Specimen ID]
+    po:
+    - ['http://purl.obolibrary.org/obo/RO_0010002', 'method:SpecimenID~iri']
+  CrossheadSpeedSetPoint:
+    sources: [data_entities]
+    s: $(@id)
+    condition:
+      function: equal
+      parameters:
+      - [str1, $(label)]
+      - [str2, Crosshead seperation speed]
+    po:
+    - ['http://purl.obolibrary.org/obo/RO_0010002', 'method:CrossheadSpeedSetPoint~iri']
+  CrossheadSpeedSetPointValue:
+    sources: [data_entities]
+    s: $(@id)
+    condition:
+      function: equal
+      parameters:
+      - [str1, $(label)]
+      - [str2, Crosshead seperation speed]
+    po:
+    - ['http://purl.obolibrary.org/obo/RO_0010002', 'method:CrossheadSpeedSetPointValue~iri']
+  ForceMeasurement:
+    sources: [data_entities]
+    s: $(@id)
+    condition:
+      function: equal
+      parameters:
+      - [str1, $(name)]
+      - [str2, Force]
+    po:
+    - ['http://purl.obolibrary.org/obo/RO_0010002', 'method:ForceMeasurement~iri']
+  LengthMeasurement:
+    sources: [data_entities]
+    s: $(@id)
+    condition:
+      function: equal
+      parameters:
+      - [str1, $(name)]
+      - [str2, Displacement]
+    po:
+    - ['http://purl.obolibrary.org/obo/RO_0010002', 'method:LengthMeasurement~iri']
