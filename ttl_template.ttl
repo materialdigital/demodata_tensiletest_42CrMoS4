@@ -1,4 +1,5 @@
 @prefix : <https://example.org/> .
+@prefix iof: <https://spec.industrialontologies.org/ontology/core/Core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pmd: <https://w3id.org/pmd/co/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
@@ -28,17 +29,20 @@ qudt:Unit a owl:Class .
 :CrossheadSeparationSpeed a owl:NamedIndividual,
         pmd:SetPoint,
         tto:CrossheadSeparationRate ;
-    pmd:unit :CrossheadSeparationSpeedUnitIndividual ;
+    pmd:unit :CrossheadSeparationSpeedUnit ;
     pmd:value "value"^^rdfs:Literal .
 
-:CrossheadSeparationSpeedUnitIndividual a qudt:Unit,
-        owl:NamedIndividual .
+:CrossheadSeparationSpeedUnit a qudt:Unit,
+        owl:NamedIndividual,
+        iof:InformationContentEntity .
 
 :TensileTestingMachine a owl:NamedIndividual,
         tto:TensileTestingMachine .
 
 :TestPiece a owl:NamedIndividual,
         pmd:TestPiece .
+
+iof:InformationContentEntity a owl:Class .
 
 pmd:SetPoint a owl:Class .
 
