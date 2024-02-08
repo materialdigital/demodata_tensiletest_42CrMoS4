@@ -34,8 +34,7 @@ qudt:Unit a owl:Class .
     pmd:value "value"^^rdfs:Literal .
 
 :CrossheadSeparationSpeedUnit a qudt:Unit,
-        owl:NamedIndividual,
-        iof:InformationContentEntity .
+        owl:NamedIndividual .
 
 :TensileTestingMachine a owl:NamedIndividual,
         tto:TensileTestingMachine .
