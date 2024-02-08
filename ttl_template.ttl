@@ -27,6 +27,7 @@ pmd:value a owl:DatatypeProperty .
 qudt:Unit a owl:Class .
 
 :CrossheadSeparationSpeed a owl:NamedIndividual,
+        iof:InformationContentEntity,
         pmd:SetPoint,
         tto:CrossheadSeparationRate ;
     pmd:unit :CrossheadSeparationSpeedUnit ;
@@ -42,8 +43,6 @@ qudt:Unit a owl:Class .
 :TestPiece a owl:NamedIndividual,
         pmd:TestPiece .
 
-iof:InformationContentEntity a owl:Class .
-
 pmd:SetPoint a owl:Class .
 
 pmd:TestPiece a owl:Class .
@@ -53,4 +52,6 @@ tto:CrossheadSeparationRate a owl:Class .
 tto:TensileTest a owl:Class .
 
 tto:TensileTestingMachine a owl:Class .
+
+iof:InformationContentEntity a owl:Class .
 
