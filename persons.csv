@@ -1,6 +1,6 @@
 table name: persons
-firstname   lastname
--   -
-John    Doe
-Jane    Smith
-Sarah   Bladinck
+firstname,lastname
+-,-
+John,Doe
+Jane,Smith
+Sarah,Bladinck
