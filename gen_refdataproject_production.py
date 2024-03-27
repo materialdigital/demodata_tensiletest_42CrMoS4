@@ -14,7 +14,7 @@ g.bind('tto', TTO)
 g.bind('qudt', QUDT)
 g.bind('', EX)
 
-with open('original_data/refdataproject_production.json', 'r', encoding='utf8') as f:
+with open('refdataproject_production.json', 'r', encoding='utf8') as f:
     data = json.load(f)
 
 rod = rdflib.URIRef('https://w3id.org/pmd/projects/refdataproject/rod')
