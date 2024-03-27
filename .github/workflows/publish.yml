@@ -25,8 +25,8 @@ jobs:
         run: |
              mkdir -p release/resources
              cp src/refdataproject_combined.ttl release/refdataproject.ttl
-             xargs -I {} touch src/{}
-             xargs -I {} cp src/{} release/resources/
+             cat resources.txt | xargs -I {} touch src/{}
+             cat resources.txt | xargs -I {} cp src/{} release/resources/
       - name: Generate Artifact
         uses: actions/upload-artifact@v4
         with:
