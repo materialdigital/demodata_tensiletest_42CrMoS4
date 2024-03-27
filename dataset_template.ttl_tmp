@@ -1,0 +1,57 @@
+@prefix : <https://w3id.org/pmd/projects/refdataproject/> .
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix pmd: <https://w3id.org/pmd/co/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:{{id}}_dataset a dcat:Dataset, pmd:Dataset ;
+    dcat:distribution [
+        a dcat:Distribution ;
+        dct:title "{{id}}.csv"^^xsd:string ;
+        dct:description "Time series data of tensile test {{id}}."@en ;
+        dct:issued "2024-02-09"^^xsd:date ;
+        dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+        dcat:downloadURL "https://w3id.org/pmd/projects/refdataproject/resources/{{id}}.csv"^^xsd:anyURI ;
+        dcat:mediaType "text/csv"^^xsd:string
+    ] ;
+    prov:wasGeneratedBy [
+        a pmd:Project ;
+        pmd:characteristic [
+            a pmd:ProjectIdentifier ;
+            pmd:value "Plattform Material Digital"@de ;
+            pmd:value "Platform Material Digital"@en
+        ] 
+    ] ;
+    dcat:contactPoint [
+        a vcard:Organization ;
+        vcard:hasOrganizationName "Fraunhofer-Institut für Werkstoffmechanik"@de ;
+        vcard:hasOrganizationName "Fraunhofer Institute for Mechanics of Materials"@en ;
+        vcard:address [ a vcard:Address ;
+            vcard:country-name "Germany"@en ;
+            vcard:locality "Freiburg"@en ;
+            vcard:postal-code "79108"@en ;
+            vcard:street-address "Woehlerstr. 11"@en ;
+            vcard:hasLanguage <https://id.loc.gov/vocabulary/iso639-2/eng> ;
+        ] ;
+        vcard:address [ a vcard:Address ;
+            vcard:country-name "Deutschland"@de ;
+            vcard:locality "Freiburg"@de ;
+            vcard:postal-code "79108"@de ;
+            vcard:street-address "Wöhlerstr. 11"@de ;
+            vcard:hasLanguage <https://id.loc.gov/vocabulary/iso639-2/deu> ;
+        ]
+    ] ;
+    dcat:creator [
+        a foaf:Organization ;
+        foaf:name "Fraunhofer-Institut für Werkstoffmechanik"@de ;
+        foaf:name "Fraunhofer Institute for Mechanics of Materials"@en
+    ] ;
+    dcat:description "Time series data of tensile test {{id}}."@en ;
+    dcat:title "Time series data of tensile test {{id}}."@en ;
+    dct:issued "2024-02-09"^^xsd:date;
+    dct:language <https://id.loc.gov/vocabulary/iso639-2/eng> ;
+    dct:publisher :IWM ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> .

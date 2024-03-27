@@ -1,0 +1,492 @@
+[
+    {
+      "blank_id_iwt": "02",
+      "blank_id": "46NT01",
+      "aust_temp": 850.0,
+      "tensile_specimen_id": "46NT71",
+      "metallo_disc_id": "46NT72"
+    },
+    {
+      "blank_id_iwt": "03",
+      "blank_id": "46NT02",
+      "aust_temp": 850.0,
+      "tensile_specimen_id": "46NT73",
+      "metallo_disc_id": "46NT74"
+    },
+    {
+      "blank_id_iwt": "04",
+      "blank_id": "46NT03",
+      "aust_temp": 850.0,
+      "tensile_specimen_id": "46NT75",
+      "metallo_disc_id": "46NT76"
+    },
+    {
+      "blank_id_iwt": "05",
+      "blank_id": "46NT04",
+      "aust_temp": 850.0,
+      "tensile_specimen_id": "46NT77",
+      "metallo_disc_id": "46NT78"
+    },
+    {
+      "blank_id_iwt": "06",
+      "blank_id": "46NT05",
+      "aust_temp": 850.0,
+      "tensile_specimen_id": "46NT79",
+      "metallo_disc_id": "46NT80"
+    },
+    {
+      "blank_id_iwt": "07",
+      "blank_id": "46NT06",
+      "aust_temp": 850.0,
+      "tensile_specimen_id": "46NT81",
+      "metallo_disc_id": "46NT82"
+    },
+    {
+      "blank_id_iwt": "08",
+      "blank_id": "46NT07",
+      "aust_temp": 850.0,
+      "tensile_specimen_id": "46NT83",
+      "metallo_disc_id": "46NT84"
+    },
+    {
+      "blank_id_iwt": "09",
+      "blank_id": "46NT08",
+      "aust_temp": 850.0,
+      "tensile_specimen_id": "46NT85",
+      "metallo_disc_id": "46NT86"
+    },
+    {
+      "blank_id_iwt": "10",
+      "blank_id": "46NT09",
+      "aust_temp": 850.0,
+      "tensile_specimen_id": "46NT87",
+      "metallo_disc_id": "46NT88"
+    },
+    {
+      "blank_id_iwt": "11",
+      "blank_id": "46NT10",
+      "aust_temp": 850.0,
+      "tensile_specimen_id": "46NT89",
+      "metallo_disc_id": "46NT90"
+    },
+    {
+      "blank_id_iwt": "12",
+      "blank_id": "46NT11",
+      "aust_temp": 850.0,
+      "tensile_specimen_id": "46NT91",
+      "metallo_disc_id": "46NT92"
+    },
+    {
+      "blank_id_iwt": "13",
+      "blank_id": "46NT12",
+      "aust_temp": 850.0,
+      "tensile_specimen_id": "46NT93",
+      "metallo_disc_id": "46NT94"
+    },
+    {
+      "blank_id_iwt": "14",
+      "blank_id": "46NT13",
+      "aust_temp": 850.0,
+      "tensile_specimen_id": "46NT95",
+      "metallo_disc_id": "46NT96"
+    },
+    {
+      "blank_id_iwt": "15",
+      "blank_id": "46NT14",
+      "aust_temp": 850.0,
+      "tensile_specimen_id": "46NT97",
+      "metallo_disc_id": "46NT98"
+    },
+    {
+      "blank_id_iwt": "17",
+      "blank_id": "46NT15",
+      "aust_temp": 925.0,
+      "tensile_specimen_id": "46NT99",
+      "metallo_disc_id": "46NT9A"
+    },
+    {
+      "blank_id_iwt": "18",
+      "blank_id": "46NT16",
+      "aust_temp": 925.0,
+      "tensile_specimen_id": "46NT9B",
+      "metallo_disc_id": "46NT9C"
+    },
+    {
+      "blank_id_iwt": "19",
+      "blank_id": "46NT17",
+      "aust_temp": 925.0,
+      "tensile_specimen_id": "46NT9D",
+      "metallo_disc_id": "46NT9E"
+    },
+    {
+      "blank_id_iwt": "20",
+      "blank_id": "46NT18",
+      "aust_temp": 925.0,
+      "tensile_specimen_id": "46NT9F",
+      "metallo_disc_id": "46NT9G"
+    },
+    {
+      "blank_id_iwt": "21",
+      "blank_id": "46NT19",
+      "aust_temp": 925.0,
+      "tensile_specimen_id": "46NT9H",
+      "metallo_disc_id": "46NT9I"
+    },
+    {
+      "blank_id_iwt": "22",
+      "blank_id": "46NT20",
+      "aust_temp": 925.0,
+      "tensile_specimen_id": "46NT9J",
+      "metallo_disc_id": "46NT9K"
+    },
+    {
+      "blank_id_iwt": "23",
+      "blank_id": "46NT21",
+      "aust_temp": 925.0,
+      "tensile_specimen_id": "46NT9L",
+      "metallo_disc_id": "46NT9M"
+    },
+    {
+      "blank_id_iwt": "24",
+      "blank_id": "46NT22",
+      "aust_temp": 925.0,
+      "tensile_specimen_id": "46NT9N",
+      "metallo_disc_id": "46NT9O"
+    },
+    {
+      "blank_id_iwt": "25",
+      "blank_id": "46NT23",
+      "aust_temp": 925.0,
+      "tensile_specimen_id": "46NT9P",
+      "metallo_disc_id": "46NT9Q"
+    },
+    {
+      "blank_id_iwt": "26",
+      "blank_id": "46NT24",
+      "aust_temp": 925.0,
+      "tensile_specimen_id": "46NT9R",
+      "metallo_disc_id": "46NT9S"
+    },
+    {
+      "blank_id_iwt": "27",
+      "blank_id": "46NT25",
+      "aust_temp": 925.0,
+      "tensile_specimen_id": "46NT9T",
+      "metallo_disc_id": "46NT9U"
+    },
+    {
+      "blank_id_iwt": "28",
+      "blank_id": "46NT26",
+      "aust_temp": 925.0,
+      "tensile_specimen_id": "46NT9V",
+      "metallo_disc_id": "46NT9W"
+    },
+    {
+      "blank_id_iwt": "29",
+      "blank_id": "46NT27",
+      "aust_temp": 925.0,
+      "tensile_specimen_id": "46NT9X",
+      "metallo_disc_id": "46NT9Y"
+    },
+    {
+      "blank_id_iwt": "30",
+      "blank_id": "46NT28",
+      "aust_temp": 925.0,
+      "tensile_specimen_id": "46NT9Z",
+      "metallo_disc_id": "46NTA0"
+    },
+    {
+      "blank_id_iwt": "32",
+      "blank_id": "46NT29",
+      "aust_temp": 1000.0,
+      "tensile_specimen_id": "46NTA1",
+      "metallo_disc_id": "46NTA2"
+    },
+    {
+      "blank_id_iwt": "33",
+      "blank_id": "46NT30",
+      "aust_temp": 1000.0,
+      "tensile_specimen_id": "46NTA3",
+      "metallo_disc_id": "46NTA4"
+    },
+    {
+      "blank_id_iwt": "34",
+      "blank_id": "46NT31",
+      "aust_temp": 1000.0,
+      "tensile_specimen_id": "46NTA5",
+      "metallo_disc_id": "46NTA6"
+    },
+    {
+      "blank_id_iwt": "35",
+      "blank_id": "46NT32",
+      "aust_temp": 1000.0,
+      "tensile_specimen_id": "46NTA7",
+      "metallo_disc_id": "46NTA8"
+    },
+    {
+      "blank_id_iwt": "36",
+      "blank_id": "46NT33",
+      "aust_temp": 1000.0,
+      "tensile_specimen_id": "46NTA9",
+      "metallo_disc_id": "46NTAA"
+    },
+    {
+      "blank_id_iwt": "37",
+      "blank_id": "46NT34",
+      "aust_temp": 1000.0,
+      "tensile_specimen_id": "46NTAB",
+      "metallo_disc_id": "46NTAC"
+    },
+    {
+      "blank_id_iwt": "38",
+      "blank_id": "46NT35",
+      "aust_temp": 1000.0,
+      "tensile_specimen_id": "46NTAD",
+      "metallo_disc_id": "46NTAE"
+    },
+    {
+      "blank_id_iwt": "39",
+      "blank_id": "46NT36",
+      "aust_temp": 1000.0,
+      "tensile_specimen_id": "46NTAF",
+      "metallo_disc_id": "46NTAG"
+    },
+    {
+      "blank_id_iwt": "40",
+      "blank_id": "46NT37",
+      "aust_temp": 1000.0,
+      "tensile_specimen_id": "46NTAH",
+      "metallo_disc_id": "46NTAI"
+    },
+    {
+      "blank_id_iwt": "41",
+      "blank_id": "46NT38",
+      "aust_temp": 1000.0,
+      "tensile_specimen_id": "46NTAJ",
+      "metallo_disc_id": "46NTAK"
+    },
+    {
+      "blank_id_iwt": "42",
+      "blank_id": "46NT39",
+      "aust_temp": 1000.0,
+      "tensile_specimen_id": "46NTAL",
+      "metallo_disc_id": "46NTAM"
+    },
+    {
+      "blank_id_iwt": "43",
+      "blank_id": "46NT40",
+      "aust_temp": 1000.0,
+      "tensile_specimen_id": "46NTAN",
+      "metallo_disc_id": "46NTAO"
+    },
+    {
+      "blank_id_iwt": "44",
+      "blank_id": "46NT41",
+      "aust_temp": 1000.0,
+      "tensile_specimen_id": "46NTAP",
+      "metallo_disc_id": "46NTAQ"
+    },
+    {
+      "blank_id_iwt": "45",
+      "blank_id": "46NT42",
+      "aust_temp": 1000.0,
+      "tensile_specimen_id": "46NTAR",
+      "metallo_disc_id": "46NTAS"
+    },
+    {
+      "blank_id_iwt": "62",
+      "blank_id": "46NT43",
+      "aust_temp": 1150.0,
+      "tensile_specimen_id": "46NTAT",
+      "metallo_disc_id": "46NTAU"
+    },
+    {
+      "blank_id_iwt": "63",
+      "blank_id": "46NT44",
+      "aust_temp": 1150.0,
+      "tensile_specimen_id": "46NTAV",
+      "metallo_disc_id": "46NTAW"
+    },
+    {
+      "blank_id_iwt": "64",
+      "blank_id": "46NT45",
+      "aust_temp": 1150.0,
+      "tensile_specimen_id": "46NTAX",
+      "metallo_disc_id": "46NTAY"
+    },
+    {
+      "blank_id_iwt": "65",
+      "blank_id": "46NT46",
+      "aust_temp": 1150.0,
+      "tensile_specimen_id": "46NTAZ",
+      "metallo_disc_id": "46NTB0"
+    },
+    {
+      "blank_id_iwt": "66",
+      "blank_id": "46NT47",
+      "aust_temp": 1150.0,
+      "tensile_specimen_id": "46NTB1",
+      "metallo_disc_id": "46NTB2"
+    },
+    {
+      "blank_id_iwt": "67",
+      "blank_id": "46NT48",
+      "aust_temp": 1150.0,
+      "tensile_specimen_id": "46NTB3",
+      "metallo_disc_id": "46NTB4"
+    },
+    {
+      "blank_id_iwt": "68",
+      "blank_id": "46NT49",
+      "aust_temp": 1150.0,
+      "tensile_specimen_id": "46NTB5",
+      "metallo_disc_id": "46NTB6"
+    },
+    {
+      "blank_id_iwt": "69",
+      "blank_id": "46NT50",
+      "aust_temp": 1150.0,
+      "tensile_specimen_id": "46NTB7",
+      "metallo_disc_id": "46NTB8"
+    },
+    {
+      "blank_id_iwt": "70",
+      "blank_id": "46NT51",
+      "aust_temp": 1150.0,
+      "tensile_specimen_id": "46NTB9",
+      "metallo_disc_id": "46NTBA"
+    },
+    {
+      "blank_id_iwt": "71",
+      "blank_id": "46NT52",
+      "aust_temp": 1150.0,
+      "tensile_specimen_id": "46NTBB",
+      "metallo_disc_id": "46NTBC"
+    },
+    {
+      "blank_id_iwt": "72",
+      "blank_id": "46NT53",
+      "aust_temp": 1150.0,
+      "tensile_specimen_id": "46NTBD",
+      "metallo_disc_id": "46NTBE"
+    },
+    {
+      "blank_id_iwt": "73",
+      "blank_id": "46NT54",
+      "aust_temp": 1150.0,
+      "tensile_specimen_id": "46NTBF",
+      "metallo_disc_id": "46NTBG"
+    },
+    {
+      "blank_id_iwt": "74",
+      "blank_id": "46NT55",
+      "aust_temp": 1150.0,
+      "tensile_specimen_id": "46NTBH",
+      "metallo_disc_id": "46NTBI"
+    },
+    {
+      "blank_id_iwt": "75",
+      "blank_id": "46NT56",
+      "aust_temp": 1150.0,
+      "tensile_specimen_id": "46NTBJ",
+      "metallo_disc_id": "46NTBK"
+    },
+    {
+      "blank_id_iwt": "77",
+      "blank_id": "46NT57",
+      "aust_temp": 1075.0,
+      "tensile_specimen_id": "46NTBL",
+      "metallo_disc_id": "46NTBM"
+    },
+    {
+      "blank_id_iwt": "78",
+      "blank_id": "46NT58",
+      "aust_temp": 1075.0,
+      "tensile_specimen_id": "46NTBN",
+      "metallo_disc_id": "46NTBO"
+    },
+    {
+      "blank_id_iwt": "79",
+      "blank_id": "46NT59",
+      "aust_temp": 1075.0,
+      "tensile_specimen_id": "46NTBP",
+      "metallo_disc_id": "46NTBQ"
+    },
+    {
+      "blank_id_iwt": "80",
+      "blank_id": "46NT60",
+      "aust_temp": 1075.0,
+      "tensile_specimen_id": "46NTBR",
+      "metallo_disc_id": "46NTBS"
+    },
+    {
+      "blank_id_iwt": "81",
+      "blank_id": "46NT61",
+      "aust_temp": 1075.0,
+      "tensile_specimen_id": "46NTBT",
+      "metallo_disc_id": "46NTBU"
+    },
+    {
+      "blank_id_iwt": "82",
+      "blank_id": "46NT62",
+      "aust_temp": 1075.0,
+      "tensile_specimen_id": "46NTBV",
+      "metallo_disc_id": "46NTBW"
+    },
+    {
+      "blank_id_iwt": "83",
+      "blank_id": "46NT63",
+      "aust_temp": 1075.0,
+      "tensile_specimen_id": "46NTBX",
+      "metallo_disc_id": "46NTBY"
+    },
+    {
+      "blank_id_iwt": "84",
+      "blank_id": "46NT64",
+      "aust_temp": 1075.0,
+      "tensile_specimen_id": "46NTBZ",
+      "metallo_disc_id": "46NTC0"
+    },
+    {
+      "blank_id_iwt": "85",
+      "blank_id": "46NT65",
+      "aust_temp": 1075.0,
+      "tensile_specimen_id": "46NTC1",
+      "metallo_disc_id": "46NTC2"
+    },
+    {
+      "blank_id_iwt": "86",
+      "blank_id": "46NT66",
+      "aust_temp": 1075.0,
+      "tensile_specimen_id": "46NTC3",
+      "metallo_disc_id": "46NTC4"
+    },
+    {
+      "blank_id_iwt": "87",
+      "blank_id": "46NT67",
+      "aust_temp": 1075.0,
+      "tensile_specimen_id": "46NTC5",
+      "metallo_disc_id": "46NTC6"
+    },
+    {
+      "blank_id_iwt": "88",
+      "blank_id": "46NT68",
+      "aust_temp": 1075.0,
+      "tensile_specimen_id": "46NTC7",
+      "metallo_disc_id": "46NTC8"
+    },
+    {
+      "blank_id_iwt": "89",
+      "blank_id": "46NT69",
+      "aust_temp": 1075.0,
+      "tensile_specimen_id": "46NTC9",
+      "metallo_disc_id": "46NTCA"
+    },
+    {
+      "blank_id_iwt": "90",
+      "blank_id": "46NT70",
+      "aust_temp": 1075.0,
+      "tensile_specimen_id": "46NTCB",
+      "metallo_disc_id": "46NTCC"
+    }
+   ]

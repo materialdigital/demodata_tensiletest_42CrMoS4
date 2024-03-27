@@ -1,0 +1,6 @@
+play*.ipynb
+play*.py
+ignore
+resources*
+*.ttl
+catalog-v*.xml
