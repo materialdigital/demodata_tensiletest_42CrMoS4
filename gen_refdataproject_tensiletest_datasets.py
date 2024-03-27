@@ -70,5 +70,7 @@ if __name__ == '__main__':
     for id in [f.split('.')[0] for f in os.listdir('./original_data')]:
         if not os.path.exists('resources'):
             os.mkdir('resources')
+        if not os.path.exists('datasets'):
+            os.mkdir('datasets')
         tocsvjson(id)
         create_dataset(id)
