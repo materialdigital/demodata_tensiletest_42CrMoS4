@@ -41,7 +41,7 @@ lookup = {
     'Heat treatment batch:': {'key': 'heattreatmentbatch', 'pattern': lambda v: {'value': v.rstrip(), 'datatype': 'string'}}
 }
 
-def tocsvjson(id, skip_json=True):
+def tocsvjson(id, skip_json=False):
     with open(f'original_data/{id}.csv') as f:
         d = {}
         csvlines = []
