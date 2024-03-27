@@ -12,6 +12,7 @@ class UnitDict(dict):
 udict = UnitDict({
     '%': 'percent',
     'mm\u00c2\u00b2': 'mm2',
+    'mm²': 'mm2',
     'mm/s': 'mms-1'
 })
 
