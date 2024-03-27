@@ -47,6 +47,7 @@ g.add((ouri, DCTERMS.creator, rdflib.URIRef("https://orcid.org/0000-0003-0086-58
 g.add((ouri, DCTERMS.contributor, rdflib.URIRef("https://orcid.org/0000-0002-9014-2920")))
 g.add((ouri, DCTERMS.contributor, rdflib.URIRef("https://orcid.org/0000-0003-4461-6539")))
 g.add((ouri, DCTERMS.contributor, rdflib.URIRef("https://orcid.org/0000-0002-9014-2920")))
+g.add((ouri, DCTERMS.contributor, jannis))
 g.add((ouri, DCTERMS.title, rdflib.Literal("PMD Reference Dataset", lang="en")))
 g.add((ouri, RDFS.comment, rdflib.Literal("""This ontology describes the findings from a project to create a reference data set for the PMD (Plattform Material Digital). It's intended to serve as a basis for developing and testing semantic web technology applications in the MSE domain. It uses the PMDco and the application ontology TTO.""", lang="en")))
 g.add((ouri, OWL.imports, rdflib.URIRef("https://w3id.org/pmd/co/2.0.7/")))
