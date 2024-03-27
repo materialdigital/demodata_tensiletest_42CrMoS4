@@ -25,6 +25,7 @@ jobs:
         run: |
              mkdir -p release/resources
              cp src/refdataproject_combined.ttl release/refdataproject.ttl
+             cp src/refdataproject_combined.rdf release/refdataproject.rdf
              cat src/resources.txt | xargs -I {} touch src/{}
              cat src/resources.txt | xargs -I {} cp src/{} release/resources/
       - name: Generate Artifact

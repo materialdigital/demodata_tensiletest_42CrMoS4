@@ -21,6 +21,7 @@ for dataset_ttl in [os.path.join('datasets', f'{f}') for f in os.listdir('datase
 #print(f"Graph is connected: {g.connected()}")
 
 g.serialize('refdataproject_combined.ttl', format='turtle')
+g.serialize('refdataproject_combined.rdf', format='xml')
 
 ## create list of resources
 resources = [str(row.o).replace("https://w3id.org/pmd/projects/refdataproject/", "") for row in g.query("""SELECT * WHERE {
