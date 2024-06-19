@@ -1,0 +1,24 @@
+{
+  "title": "Tensile test project data transformation workflow",
+  "workflow_environment": "other",
+  "description": "In a project, tensile tests were conducted on specimens taken from 42CrMoS4 in different heat treatment states. This workflow transforms the naively/classically structured project data into data that is structured according to the tensile test ontology TTO.",
+  "authors": [
+    "Matthias Jung matthias.jung@iwm.fraunhofer.de"
+  ],
+  "release": "0.1.0",
+  "keywords": [
+    "data acquisition pipeline",
+    "tensile test ontology"
+  ],
+  "categories": [
+    "experimental"
+  ],
+  "steps/codes": [
+    ""
+  ],
+  "licenses": {
+    "pyiron": "BSD-3"
+  },
+  "publications": [],
+  "logo": ""
+}
