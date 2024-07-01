@@ -1,6 +1,6 @@
 import argparse
 
-def gen_html(writer, **kwargs):
+def gen_html(writer, title, repo_owner, repo_name, rdfname, resources):
     writer.write('<!DOCTYPE html>\n')
     writer.write('<html>\n')
     writer.write(f'<title>{title:s}</title>\n')
