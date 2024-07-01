@@ -1,5 +1,8 @@
 import json
+import os
+import shutil
 import rdflib
+import logging
 from rdflib.namespace import RDF, XSD, DCTERMS, RDFS, DCAT
 
 PMD = rdflib.Namespace('https://w3id.org/pmd/co/')
@@ -13,6 +16,14 @@ g.bind('pmd', PMD)
 g.bind('tto', TTO)
 g.bind('qudt', QUDT)
 g.bind('', EX)
+
+def _add_resource(filename):
+    if os.path.exists(f'original_data/{filename}'):
+        if not os.path.exists('resources'):
+            os.mkdir('resources')
+        shutil.copyfile(f'original_data/{filename}', f'resources/{filename}')
+    else:
+        logging.warning('File %s was not found in the original_data directory. In gh-pages it will show up as empty file.', filename)
 
 with open('refdataproject_production.json', 'r', encoding='utf8') as f:
     data = json.load(f)
@@ -40,6 +51,7 @@ g.add((rod_inspection_certificate_resource_dist, DCAT.downloadURL, rdflib.Litera
 g.add((rod_inspection_certificate_resource_dist, DCAT.mediaType, rdflib.Literal("application/pdf", datatype=XSD.string)))
 g.add((rod_inspection_certificate_resource_dist, DCTERMS.format, rod_inspection_certificate_resource_dist_fmt := rdflib.BNode()))
 g.add((rod_inspection_certificate_resource_dist_fmt, RDFS.label, rdflib.Literal("PDF", datatype=XSD.string)))
+_add_resource('rod_inspection_certificate_anon.pdf')
 
 def spec_ht(temp, charge):
     heattreatment_recipe = rdflib.URIRef(EX.term(f"recipe_heattreatment_{int(temp)}"))
@@ -103,8 +115,12 @@ def spec_ht(temp, charge):
     g.add((heattreatment_austemp, PMD.characteristic, heattreatment_austemp_note))
     g.add((heattreatment_austemp_note, RDF.type, PMD.Note))
     g.add((heattreatment_austemp_note, PMD.value, rdflib.Literal("Austenitisation temperature", lang="en")))
+    _add_resource(f'HT_Q_Charge_{charge:d}.pdf')
+    _add_resource(f'HT_Q_Charge_{charge:d}.csv')
     return heattreatment_recipe
 heattreatment_recipes = {t: spec_ht(t, c) for t, c in [(850, 3466), (925, 3467), (1000, 3468), (1075, 3471), (1150, 3470)]}
+_add_resource('HT_T.pdf')
+_add_resource('HT_T.csv')
 
 shipping = EX.term("process_shipping")
 shipping_sticker = rdflib.BNode()
@@ -124,6 +140,7 @@ g.add((shipping_sticker_resource_dist, DCAT.downloadURL, rdflib.Literal("https:/
 g.add((shipping_sticker_resource_dist, DCAT.mediaType, rdflib.Literal("application/pdf", datatype=XSD.string)))
 g.add((shipping_sticker_resource_dist, DCTERMS.format, shipping_sticker_resource_dist_fmt))
 g.add((shipping_sticker_resource_dist_fmt, RDFS.label, rdflib.Literal("PDF", datatype=XSD.string)))
+_add_resource('shipping_sticker_anon.pdf')
 
 for path in data:
     blank_iwt = EX.term(f"blank_iwt_{path['blank_id_iwt']}")
