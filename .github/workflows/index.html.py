@@ -27,6 +27,7 @@ def make_parser():
     parser_.add_argument('-r', '--rdfname', required=True, help='Name of the rdf files (without extension)')
     parser_.add_argument('-l', '--resourceslist', required=True, help='List of all resources (with extension)')
     parser_.add_argument('-f', '--outfile', required=True, help='Path of the target html file')
+    return parser_
 
 if __name__ == '__main__':
     parser = make_parser()
