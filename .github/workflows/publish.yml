@@ -28,7 +28,7 @@ jobs:
              cp src/refdataproject_combined.rdf release/refdataproject.rdf
              cat src/resources.txt | xargs -I {} touch src/{}
              cat src/resources.txt | xargs -I {} cp src/{} release/resources/
-             python src/.github/workflows/index.html.py -h release/index.html -t ${{ github.event.repository.name }} -o $GITHUB_REPOSITORY_OWNER -n ${{ github.event.repository.name }} -r refdataproject -l src/resources.txt
+             python src/.github/workflows/index.html.py -f release/index.html -t ${{ github.event.repository.name }} -o $GITHUB_REPOSITORY_OWNER -n ${{ github.event.repository.name }} -r refdataproject -l src/resources.txt
       - name: Generate Artifact
         uses: actions/upload-artifact@v4
         with:
