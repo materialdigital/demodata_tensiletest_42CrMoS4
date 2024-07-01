@@ -26,7 +26,7 @@ def make_parser():
     parser_.add_argument('-n', '--name', required=True, help='Repo name')
     parser_.add_argument('-r', '--rdfname', required=True, help='Name of the rdf files (without extension)')
     parser_.add_argument('-l', '--resourceslist', required=True, help='List of all resources (with extension)')
-    parser_.add_argument('-h', '--html', required=True, help='Path of the target html file')
+    parser_.add_argument('-f', '--outfile', required=True, help='Path of the target html file')
 
 if __name__ == '__main__':
     parser = make_parser()
@@ -43,5 +43,5 @@ if __name__ == '__main__':
         "resources": resources_
     }
 
-    with open(args.html, 'w', encoding='utf8') as f:
+    with open(args.outfile, 'w', encoding='utf8') as f:
         gen_html(f, **html_args)
