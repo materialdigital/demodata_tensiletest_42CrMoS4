@@ -93,7 +93,7 @@ def spec_ht(temp, charge):
     g.add((ht_Q_protocol_csv_resource, RDF.type, DCAT.Dataset))
     g.add((ht_Q_protocol_csv_resource, DCAT.distribution, ht_Q_protocol_csv_resource_dist := rdflib.BNode()))
     g.add((ht_Q_protocol_csv_resource_dist, RDF.type, DCAT.Distribution))
-    g.add((ht_Q_protocol_csv_resource_dist, DCAT.downloadURL, rdflib.Literal(f"{resources_namespace_}resources/HT_Q_Charge_{charge:d}.csv", datatype=XSD.anyURI)))
+    g.add((ht_Q_protocol_csv_resource_dist, DCAT.downloadURL, rdflib.Literal(f"{resources_namespace_}HT_Q_Charge_{charge:d}.csv", datatype=XSD.anyURI)))
     g.add((ht_Q_protocol_csv_resource_dist, DCAT.mediaType, rdflib.Literal("text/csv", datatype=XSD.string)))
     g.add((ht_Q_protocol_csv_resource_dist, DCTERMS.format, ht_Q_protocol_csv_resource_dist_fmt := rdflib.BNode()))
     g.add((ht_Q_protocol_csv_resource_dist_fmt, RDFS.label, rdflib.Literal("CSV", datatype=XSD.string)))

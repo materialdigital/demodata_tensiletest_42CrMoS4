@@ -2,5 +2,7 @@ play*.ipynb
 play*.py
 ignore
 resources*
+datasets*
 *.ttl
+*.rdf
 catalog-v*.xml
