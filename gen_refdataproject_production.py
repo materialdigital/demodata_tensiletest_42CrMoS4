@@ -3,12 +3,24 @@ import os
 import shutil
 import rdflib
 import logging
+import argparse
 from rdflib.namespace import RDF, XSD, DCTERMS, RDFS, DCAT
 
 PMD = rdflib.Namespace('https://w3id.org/pmd/co/')
 TTO = rdflib.Namespace('https://w3id.org/pmd/tto/')
 QUDT = rdflib.Namespace('https://qudt.org/vocab/unit/')
-EX = rdflib.Namespace('https://w3id.org/pmd/projects/refdataproject/')
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-n', '--namespace', required=True, help='Namespace for the ABox')
+parser.add_argument('-r', '--resources_namespace', required=False, default=None, help='Namespace for resources, defaults to <--namespace>/resources/')
+args = parser.parse_args()
+
+EX = rdflib.Namespace(args.namespace)
+
+if args.resources_namespace is None:
+    resources_namespace_ = args.namespace+'resources/'
+else:
+    resources_namespace_ = args.resources_namespace
 
 g = rdflib.Graph()
 
@@ -28,7 +40,7 @@ def _add_resource(filename):
 with open('refdataproject_production.json', 'r', encoding='utf8') as f:
     data = json.load(f)
 
-rod = rdflib.URIRef('https://w3id.org/pmd/projects/refdataproject/rod')
+rod = rdflib.URIRef(f'{args.namespace}rod')
 g.add((rod, RDF.type, PMD.BaseMaterial))
 g.add((rod, RDFS.label, rdflib.Literal('Rod material', lang='en')))
 g.add((rod, PMD.characteristic, rod_inspection_certificate := rdflib.BNode()))
@@ -47,7 +59,7 @@ g.add((rod_inspection_certificate_resource, RDF.type, PMD.Dataset))
 g.add((rod_inspection_certificate_resource, RDF.type, DCAT.Dataset))
 g.add((rod_inspection_certificate_resource, DCAT.distribution, rod_inspection_certificate_resource_dist := rdflib.BNode()))
 g.add((rod_inspection_certificate_resource_dist, RDF.type, DCAT.Distribution))
-g.add((rod_inspection_certificate_resource_dist, DCAT.downloadURL, rdflib.Literal("https://w3id.org/pmd/projects/refdataproject/resources/rod_inspection_certificate_anon.pdf", datatype=XSD.anyURI)))
+g.add((rod_inspection_certificate_resource_dist, DCAT.downloadURL, rdflib.Literal(f"{resources_namespace_}rod_inspection_certificate_anon.pdf", datatype=XSD.anyURI)))
 g.add((rod_inspection_certificate_resource_dist, DCAT.mediaType, rdflib.Literal("application/pdf", datatype=XSD.string)))
 g.add((rod_inspection_certificate_resource_dist, DCTERMS.format, rod_inspection_certificate_resource_dist_fmt := rdflib.BNode()))
 g.add((rod_inspection_certificate_resource_dist_fmt, RDFS.label, rdflib.Literal("PDF", datatype=XSD.string)))
@@ -70,7 +82,7 @@ def spec_ht(temp, charge):
     g.add((ht_Q_protocol_pdf_resource, RDF.type, DCAT.Dataset))
     g.add((ht_Q_protocol_pdf_resource, DCAT.distribution, ht_Q_protocol_pdf_resource_dist := rdflib.BNode()))
     g.add((ht_Q_protocol_pdf_resource_dist, RDF.type, DCAT.Distribution))
-    g.add((ht_Q_protocol_pdf_resource_dist, DCAT.downloadURL, rdflib.Literal(f"https://w3id.org/pmd/projects/refdataproject/resources/HT_Q_Charge_{charge:d}.pdf", datatype=XSD.anyURI)))
+    g.add((ht_Q_protocol_pdf_resource_dist, DCAT.downloadURL, rdflib.Literal(f"{resources_namespace_}HT_Q_Charge_{charge:d}.pdf", datatype=XSD.anyURI)))
     g.add((ht_Q_protocol_pdf_resource_dist, DCAT.mediaType, rdflib.Literal("application/pdf", datatype=XSD.string)))
     g.add((ht_Q_protocol_pdf_resource_dist, DCTERMS.format, ht_Q_protocol_pdf_resource_dist_fmt := rdflib.BNode()))
     g.add((ht_Q_protocol_pdf_resource_dist_fmt, RDFS.label, rdflib.Literal("PDF", datatype=XSD.string)))
@@ -81,7 +93,7 @@ def spec_ht(temp, charge):
     g.add((ht_Q_protocol_csv_resource, RDF.type, DCAT.Dataset))
     g.add((ht_Q_protocol_csv_resource, DCAT.distribution, ht_Q_protocol_csv_resource_dist := rdflib.BNode()))
     g.add((ht_Q_protocol_csv_resource_dist, RDF.type, DCAT.Distribution))
-    g.add((ht_Q_protocol_csv_resource_dist, DCAT.downloadURL, rdflib.Literal(f"https://w3id.org/pmd/projects/refdataproject/resources/HT_Q_Charge_{charge:d}.csv", datatype=XSD.anyURI)))
+    g.add((ht_Q_protocol_csv_resource_dist, DCAT.downloadURL, rdflib.Literal(f"{resources_namespace_}resources/HT_Q_Charge_{charge:d}.csv", datatype=XSD.anyURI)))
     g.add((ht_Q_protocol_csv_resource_dist, DCAT.mediaType, rdflib.Literal("text/csv", datatype=XSD.string)))
     g.add((ht_Q_protocol_csv_resource_dist, DCTERMS.format, ht_Q_protocol_csv_resource_dist_fmt := rdflib.BNode()))
     g.add((ht_Q_protocol_csv_resource_dist_fmt, RDFS.label, rdflib.Literal("CSV", datatype=XSD.string)))
@@ -92,7 +104,7 @@ def spec_ht(temp, charge):
     g.add((ht_T_protocol_pdf_resource, RDF.type, DCAT.Dataset))
     g.add((ht_T_protocol_pdf_resource, DCAT.distribution, ht_T_protocol_pdf_resource_dist := rdflib.BNode()))
     g.add((ht_T_protocol_pdf_resource_dist, RDF.type, DCAT.Distribution))
-    g.add((ht_T_protocol_pdf_resource_dist, DCAT.downloadURL, rdflib.Literal(f"https://w3id.org/pmd/projects/refdataproject/resources/HT_T.pdf", datatype=XSD.anyURI)))
+    g.add((ht_T_protocol_pdf_resource_dist, DCAT.downloadURL, rdflib.Literal(f"{resources_namespace_}HT_T.pdf", datatype=XSD.anyURI)))
     g.add((ht_T_protocol_pdf_resource_dist, DCAT.mediaType, rdflib.Literal("application/pdf", datatype=XSD.string)))
     g.add((ht_T_protocol_pdf_resource_dist, DCTERMS.format, ht_T_protocol_pdf_resource_dist_fmt := rdflib.BNode()))
     g.add((ht_T_protocol_pdf_resource_dist_fmt, RDFS.label, rdflib.Literal("PDF", datatype=XSD.string)))
@@ -103,7 +115,7 @@ def spec_ht(temp, charge):
     g.add((ht_T_protocol_csv_resource, RDF.type, DCAT.Dataset))
     g.add((ht_T_protocol_csv_resource, DCAT.distribution, ht_T_protocol_csv_resource_dist := rdflib.BNode()))
     g.add((ht_T_protocol_csv_resource_dist, RDF.type, DCAT.Distribution))
-    g.add((ht_T_protocol_csv_resource_dist, DCAT.downloadURL, rdflib.Literal(f"https://w3id.org/pmd/projects/refdataproject/resources/HT_T.csv", datatype=XSD.anyURI)))
+    g.add((ht_T_protocol_csv_resource_dist, DCAT.downloadURL, rdflib.Literal(f"{resources_namespace_}HT_T.csv", datatype=XSD.anyURI)))
     g.add((ht_T_protocol_csv_resource_dist, DCAT.mediaType, rdflib.Literal("text/csv", datatype=XSD.string)))
     g.add((ht_T_protocol_csv_resource_dist, DCTERMS.format, ht_T_protocol_csv_resource_dist_fmt := rdflib.BNode()))
     g.add((ht_T_protocol_csv_resource_dist_fmt, RDFS.label, rdflib.Literal("CSV", datatype=XSD.string)))
@@ -136,7 +148,7 @@ g.add((shipping_sticker_resource, RDF.type, PMD.Dataset))
 g.add((shipping_sticker_resource, RDF.type, DCAT.Dataset))
 g.add((shipping_sticker_resource, DCAT.distribution, shipping_sticker_resource_dist))
 g.add((shipping_sticker_resource_dist, RDF.type, DCAT.Distribution))
-g.add((shipping_sticker_resource_dist, DCAT.downloadURL, rdflib.Literal("https://w3id.org/pmd/projects/refdataproject/resources/shipping_sticker_anon.pdf", datatype=XSD.anyURI)))
+g.add((shipping_sticker_resource_dist, DCAT.downloadURL, rdflib.Literal(f"{resources_namespace_}shipping_sticker_anon.pdf", datatype=XSD.anyURI)))
 g.add((shipping_sticker_resource_dist, DCAT.mediaType, rdflib.Literal("application/pdf", datatype=XSD.string)))
 g.add((shipping_sticker_resource_dist, DCTERMS.format, shipping_sticker_resource_dist_fmt))
 g.add((shipping_sticker_resource_dist_fmt, RDFS.label, rdflib.Literal("PDF", datatype=XSD.string)))

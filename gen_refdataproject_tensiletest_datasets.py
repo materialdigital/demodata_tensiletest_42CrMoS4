@@ -1,6 +1,7 @@
 import json
 import os
 import numpy as np
+import argparse
 
 class UnitDict(dict):
     def __missing__(self, key):
@@ -61,17 +62,31 @@ def tocsvjson(id, skip_json=False):
     with open(f'resources/{id}.csv', 'w') as f:
         f.write(''.join(csvlines))
 
-def create_dataset(id):
+def create_dataset(id, namespace, resources_namespace):
     with open('dataset_template.ttl_tmp', 'r', encoding='utf8') as inf:
         with open(f'datasets/{id}.ttl', 'w', encoding='utf8') as outf:
             for line in inf:
-                outf.write(line.replace('{{id}}', id))
+                outf.write(line.replace('{{id}}', id).replace('{{namespace}}', namespace).replace('{{resources_namespace}}', resources_namespace))
+
+def make_parser():
+    parser_ = argparse.ArgumentParser()
+    parser_.add_argument('-n', '--namespace', required=True, help='Namespace for the ABox')
+    parser_.add_argument('-r', '--resources_namespace', required=False, default=None, help='Namespace for resources, defaults to <--namespace>/resources/')
+    return parser_
 
 if __name__ == '__main__':
+    parser = make_parser()
+    args = parser.parse_args()
+
+    if args.resources_namespace is None:
+        resources_namespace_ = args.namespace+'resources/'
+    else:
+        resources_namespace_ = args.resources_namespace
+
     for id in [f.split('.')[0] for f in os.listdir('./original_data')]:
         if not os.path.exists('resources'):
             os.mkdir('resources')
         if not os.path.exists('datasets'):
             os.mkdir('datasets')
         tocsvjson(id)
-        create_dataset(id)
+        create_dataset(id, args.namespace, resources_namespace_)

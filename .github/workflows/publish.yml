@@ -16,19 +16,19 @@ jobs:
         run: |
              python -m pip install rdflib numpy
              cd src
-             python gen_refdataproject_tensiletest_datasets.py
-             python gen_refdataproject_tensiletests.py
-             python gen_refdataproject_production.py
-             python gen_combined_ttl.py
+             python gen_refdataproject_tensiletest_datasets.py -n https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/
+             python gen_refdataproject_tensiletests.py -n https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/
+             python gen_refdataproject_production.py -n https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/
+             python gen_combined_ttl.py -n https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/
       - name: Prepare release files
         id: prepare_files
         run: |
              mkdir -p release/resources
-             cp src/refdataproject_combined.ttl release/refdataproject.ttl
-             cp src/refdataproject_combined.rdf release/refdataproject.rdf
+             cp src/refdataproject_combined.ttl release/tensiletest_42CrMoS4.ttl
+             cp src/refdataproject_combined.rdf release/tensiletest_42CrMoS4.rdf
              cat src/resources.txt | xargs -I {} touch src/{}
              cat src/resources.txt | xargs -I {} cp src/{} release/resources/
-             python src/.github/workflows/index.html.py -f release/index.html -t ${{ github.event.repository.name }} -o $GITHUB_REPOSITORY_OWNER -n ${{ github.event.repository.name }} -r refdataproject -l src/resources.txt
+             python src/.github/workflows/index.html.py -f release/index.html -t ${{ github.event.repository.name }} -o $GITHUB_REPOSITORY_OWNER -n ${{ github.event.repository.name }} -r tensiletest_42CrMoS4 -l src/resources.txt
       - name: Generate Artifact
         uses: actions/upload-artifact@v4
         with:

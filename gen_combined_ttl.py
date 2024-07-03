@@ -1,10 +1,16 @@
 import rdflib
+import argparse
 import os
 
 PMD = rdflib.Namespace('https://w3id.org/pmd/co/')
 TTO = rdflib.Namespace('https://w3id.org/pmd/tto/')
 QUDT = rdflib.Namespace('https://qudt.org/vocab/unit/')
-EX = rdflib.Namespace('https://w3id.org/pmd/projects/refdataproject/')
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-n', '--namespace', required=True, help='Namespace for the ABox')
+args = parser.parse_args()
+
+EX = rdflib.Namespace(args.namespace)
 
 g = rdflib.Graph()
 
@@ -24,7 +30,7 @@ g.serialize('refdataproject_combined.ttl', format='turtle')
 g.serialize('refdataproject_combined.rdf', format='xml')
 
 ## create list of resources
-resources = [str(row.o).replace("https://w3id.org/pmd/projects/refdataproject/", "") for row in g.query("""SELECT * WHERE {
+resources = [str(row.o).replace(args.namespace, "") for row in g.query("""SELECT * WHERE {
     ?s dcat:downloadURL ?o
 }""")]
 with open('resources.txt', 'w', encoding='utf8') as f:

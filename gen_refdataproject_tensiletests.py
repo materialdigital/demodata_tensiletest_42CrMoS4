@@ -1,12 +1,18 @@
 import json
 import os
 import rdflib
+import argparse
 from rdflib.namespace import RDF, XSD, OWL, DCTERMS, RDFS, PROV, FOAF
 
 PMD = rdflib.Namespace('https://w3id.org/pmd/co/')
 TTO = rdflib.Namespace('https://w3id.org/pmd/tto/')
 QUDT = rdflib.Namespace('https://qudt.org/vocab/unit/')
-EX = rdflib.Namespace('https://w3id.org/pmd/projects/refdataproject/')
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-n', '--namespace', required=True, help='Namespace for the ABox')
+args = parser.parse_args()
+
+EX = rdflib.Namespace(args.namespace)
 
 units = {
     'mm': QUDT.MilliM,
@@ -24,7 +30,6 @@ dtypes = {
 }
 
 g = rdflib.Graph()
-#g.base = 'https://w3id.org/pmd/projects/refdataproject/'
 g.bind('pmd', PMD)
 g.bind('tto', TTO)
 g.bind('qudt', QUDT)
@@ -37,10 +42,10 @@ g.add((jannis, RDFS.label, rdflib.Literal("Jannis Grundmann")))
 g.add((jannis, FOAF.familyName, rdflib.Literal("Grundmann")))
 g.add((jannis, FOAF.givenName, rdflib.Literal("Jannis")))
 
-ouri = rdflib.URIRef('https://w3id.org/pmd/projects/refdataproject/')
+ouri = rdflib.URIRef(args.namespace)
 g.add((ouri, RDF.type, OWL.Ontology))
 g.add((ouri, OWL.versionInfo, rdflib.Literal("1.0.0")))
-g.add((ouri, OWL.versionIRI, rdflib.Literal("https://w3id.org/pmd/projects/refdataproject/1.0.0/")))
+g.add((ouri, OWL.versionIRI, rdflib.Literal(f"{args.namespace}1.0.0/")))
 g.add((ouri, DCTERMS.license, rdflib.URIRef("https://creativecommons.org/licenses/by/4.0/")))
 g.add((ouri, DCTERMS.created, rdflib.Literal("2024-02-09", datatype=XSD.date)))
 g.add((ouri, DCTERMS.creator, rdflib.URIRef("https://orcid.org/0000-0003-0086-5808")))
