@@ -23,11 +23,12 @@ jobs:
       - name: Prepare release files
         id: prepare_files
         run: |
-             mkdir -p release/1.0.0/resources
+             mkdir -p release/1.0.0
+             mkdir -p release/resources
              cp src/refdataproject_combined.ttl release/1.0.0/tensiletest_42CrMoS4.ttl
              cp src/refdataproject_combined.rdf release/1.0.0/tensiletest_42CrMoS4.rdf
              cat src/resources.txt | xargs -I {} touch src/{}
-             cat src/resources.txt | xargs -I {} cp src/{} release/1.0.0/resources/
+             cat src/resources.txt | xargs -I {} cp src/{} release/resources/
              python src/.github/workflows/index.html.py -f release/1.0.0/index.html -t ${{ github.event.repository.name }} -o $GITHUB_REPOSITORY_OWNER -n ${{ github.event.repository.name }} -r tensiletest_42CrMoS4 -l src/resources.txt
              cp src/.github/workflows/.htaccess_tmp release/1.0.0/.htaccess
              sed -i "s/{{latest_version}}/1.0.0/g" release/1.0.0/.htaccess
