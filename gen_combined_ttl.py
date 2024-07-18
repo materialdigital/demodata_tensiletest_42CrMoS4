@@ -28,6 +28,7 @@ for dataset_ttl in [os.path.join('datasets', f'{f}') for f in os.listdir('datase
 
 g.serialize('refdataproject_combined.ttl', format='turtle')
 g.serialize('refdataproject_combined.rdf', format='xml')
+g.serialize('refdataproject_combined.jsonld', format='json-ld')
 
 ## create list of resources
 resources = [str(row.o).replace(args.namespace, "") for row in g.query("""SELECT * WHERE {
