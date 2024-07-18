@@ -10,6 +10,7 @@ def gen_html(writer, title, repo_owner, repo_name, rdfname, resources, version):
     writer.write('<ul>\n')
     writer.write(f'<li><a href="https://{repo_owner:s}.github.io/{repo_name:s}/{version}/{rdfname:s}.ttl">https://{repo_owner:s}.github.io/{repo_name:s}/{version}/{rdfname:s}.ttl</a></li>\n')
     writer.write(f'<li><a href="https://{repo_owner:s}.github.io/{repo_name:s}/{version}/{rdfname:s}.rdf">https://{repo_owner:s}.github.io/{repo_name:s}/{version}/{rdfname:s}.rdf</a></li>\n')
+    writer.write(f'<li><a href="https://{repo_owner:s}.github.io/{repo_name:s}/{version}/{rdfname:s}.jsonld">https://{repo_owner:s}.github.io/{repo_name:s}/{version}/{rdfname:s}.jsonld</a></li>\n')
     writer.write('</ul>\n')
     writer.write('<h2>File resources</h2>\n')
     writer.write('<ul>\n')
