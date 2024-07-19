@@ -25,9 +25,9 @@ jobs:
         run: |
              mkdir -p release/1.0.0
              mkdir -p release/resources
-             cp src/refdataproject_combined.ttl release/1.0.0/tensiletest_42CrMoS4.ttl
-             cp src/refdataproject_combined.rdf release/1.0.0/tensiletest_42CrMoS4.rdf
-             cp src/refdataproject_combined.jsonld release/1.0.0/tensiletest_42CrMoS4.jsonld
+             cp src/refdataproject_combined.ttl release/1.0.0/onto.ttl
+             cp src/refdataproject_combined.rdf release/1.0.0/onto.rdf
+             cp src/refdataproject_combined.jsonld release/1.0.0/onto.jsonld
              cat src/resources.txt | xargs -I {} touch src/{}
              cat src/resources.txt | xargs -I {} cp src/{} release/resources/
              python src/.github/workflows/index.html.py -f release/index.html -t ${{ github.event.repository.name }} -o $GITHUB_REPOSITORY_OWNER -n ${{ github.event.repository.name }} -r tensiletest_42CrMoS4 -l src/resources.txt -v 1.0.0
