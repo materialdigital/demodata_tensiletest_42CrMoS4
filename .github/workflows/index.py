@@ -31,9 +31,9 @@ if __name__ == '__main__':
         resources_ = [line.strip() for line in f]
 
     new_html = update_html(
-        template_file=os.path.join('.github', 'workflows', 'index.html'),
+        template_file=args.template,
         resources=resources_,
-        resources_base='https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/resources/'
+        resources_base=args.resourcesbase'
     )
 
     with open(args.outfile, 'w', encoding='utf8') as f:
