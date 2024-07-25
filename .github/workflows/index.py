@@ -33,7 +33,7 @@ if __name__ == '__main__':
     new_html = update_html(
         template_file=args.template,
         resources=resources_,
-        resources_base=args.resourcesbase'
+        resources_base=args.resourcesbase
     )
 
     with open(args.outfile, 'w', encoding='utf8') as f:
