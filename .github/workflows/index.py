@@ -12,7 +12,7 @@ def update_html(template_file, resources, resources_base):
         linode = html.fromstring(f'<li><a href="{resources_base:s}{resource:s}">{resources_base:s}{resource:s}</a></li>\n')
         ulnode.insert(0, linode)
 
-    return html.tostring(tree, pretty_print=True, encoding='utf8')
+    return tree
 
 
 def make_parser():
@@ -36,5 +36,4 @@ if __name__ == '__main__':
         resources_base=args.resourcesbase
     )
 
-    with open(args.outfile, 'w', encoding='utf8') as f:
-        f.write(new_html)
+    new_html.write(args.outfile, method='html', pretty_print=True)
