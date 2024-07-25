@@ -20,7 +20,7 @@ def make_parser():
     parser_.add_argument('-t', '--template', required=True, help='Path to the template file')
     parser_.add_argument('-l', '--resourceslist', required=True, help='List of all resources (with extension)')
     parser_.add_argument('-f', '--outfile', required=True, help='Path of the target html file')
-    parser_.add_argument('-b', '--resourcesbase', default='https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/resources/', help='URI for dereferencing resources')
+    parser_.add_argument('-b', '--resourcesbase', default='https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/', help='URI for dereferencing resources')
     return parser_
 
 if __name__ == '__main__':
