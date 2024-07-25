@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - patch_html
 jobs:
   create:
     runs-on: ubuntu-latest
