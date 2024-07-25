@@ -6,3 +6,4 @@ datasets*
 *.ttl
 *.rdf
 catalog-v*.xml
+*.js

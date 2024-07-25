@@ -30,7 +30,9 @@ jobs:
              cp src/refdataproject_combined.jsonld release/1.0.0/onto.jsonld
              cat src/resources.txt | xargs -I {} touch src/{}
              cat src/resources.txt | xargs -I {} cp src/{} release/resources/
-             python src/.github/workflows/index.html.py -f release/index.html -t ${{ github.event.repository.name }} -o $GITHUB_REPOSITORY_OWNER -n ${{ github.event.repository.name }} -r tensiletest_42CrMoS4 -l src/resources.txt -v 1.0.0
+             curl -O https://code.jquery.com/jquery-3.7.1.min.js
+             cp jquery-3.7.1.min.js release/jquery-3.7.1.min.js
+             python src/.github/workflows/index.py -f release/index.html -t src/.github/workflows/index.html_tmp -l src/resources.txt
              cp src/.github/workflows/.htaccess_tmp release/.htaccess
              sed -i "s/{{latest_version}}/1.0.0/g" release/.htaccess
              REPO_OWNER_LOWERCASE=$(echo "$GITHUB_REPOSITORY_OWNER" | tr '[:upper:]' '[:lower:]')

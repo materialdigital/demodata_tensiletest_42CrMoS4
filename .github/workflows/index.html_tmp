@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <title>demodata_tensiletest_42CrMoS4</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        function download(filename, text, mimetype) {
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:'+mimetype+';charset=utf-8,' + encodeURIComponent(text))
+            element.setAttribute('download', filename);
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+
+        function createHandler(a_id, baseuri, version, accept_mimetype, download_filename) {
+            $('a#'+a_id).on('click', function () {
+                var callurl;
+                if ( version == '' ) {
+                    callurl = baseuri
+                } else {
+                    callurl = baseuri+version+'/'
+                }
+                $.ajax({
+                    headers: {
+                        Accept : accept_mimetype
+                    },
+                    url: callurl
+                }).done(function(data) {
+                    if ( typeof data == 'object' ) {
+                        if ( accept_mimetype == 'application/rdf+xml' ) {
+                            data = (new XMLSerializer()).serializeToString(data);
+                        } else {
+                            data = JSON.stringify(data);
+                        }
+                    }
+                    download(download_filename, data, accept_mimetype);
+                });
+            });
+        }
+
+        $( document ).ready(function() {
+            $('a.a_contentnegotiate').each(function( i ) {
+                var download_filename;
+                if ( $(this).attr('version') == '' ) {
+                    download_filename = 'tensiletest_42CrMoS4.'+$(this).attr('fileext');
+                } else {
+                    download_filename = 'tensiletest_42CrMoS4_'+$(this).attr('version')+'.'+$(this).attr('fileext');
+                }
+                createHandler($(this).attr('id'), $(this).attr('uri'), $(this).attr('version'), $(this).attr('accept'), download_filename);
+            });
+        });
+    </script>
+    <body>
+        <h1>demodata_tensiletest_42CrMoS4</h1>
+        <h2>RDF resources</h2>
+        <p>
+        <span>https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/&nbsp;
+            <a id="get_turtle_unversioned" class="a_contentnegotiate" uri="https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/" version="" accept="text/turtle" fileext="ttl" href="#">ttl</a>&nbsp;
+            <a id="get_rdf_unversioned" class="a_contentnegotiate" uri="https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/" version="" accept="application/rdf+xml" fileext="rdf" href="#">rdf</a>&nbsp;
+            <a id="get_jsonld_unversioned" class="a_contentnegotiate" uri="https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/" version="" accept="application/ld+json" fileext="jsonld" href="#">jsonld</a>
+        </span>
+        <br /><span>https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/latest/&nbsp;
+            <a id="get_turtle_latest" class="a_contentnegotiate" uri="https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/" version="latest" accept="text/turtle" fileext="ttl" href="#">ttl</a>&nbsp;
+            <a id="get_rdf_latest" class="a_contentnegotiate" uri="https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/" version="latest" accept="application/rdf+xml" fileext="rdf" href="#">rdf</a>&nbsp;
+            <a id="get_jsonld_latest" class="a_contentnegotiate" uri="https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/" version="latest" accept="application/ld+json" fileext="jsonld" href="#">jsonld</a>
+        </span>
+        <br /><span>https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/1.0.0/&nbsp;
+            <a id="get_turtle_1-0-0" class="a_contentnegotiate" uri="https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/" version="1.0.0" accept="text/turtle" fileext="onto.ttl" href="#">ttl</a>&nbsp;
+            <a id="get_rdf_1-0-0" class="a_contentnegotiate" uri="https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/" version="1.0.0" accept="application/rdf+xml" fileext="onto.ttl" href="#">rdf</a>&nbsp;
+            <a id="get_jsonld_1-0-0" class="a_contentnegotiate" uri="https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/" version="1.0.0" accept="application/ld+json" fileext="onto.ttl" href="#">jsonld</a>
+        </span></p>
+        <h2>File resources</h2>
+        <ul id="fileresources">
+            <li><a href="https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/resources/HT_T.csv">https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/resources/HT_T.csv</a></li>
+            <li><a href="https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/resources/HT_T.csv">https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/resources/HT_T.csv</a></li>
+            <li><a href="https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/resources/46NT73.csv">https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/resources/46NT73.csv</a></li>
+        </ul>
+    </body>
+<html>
