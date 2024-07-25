@@ -71,10 +71,6 @@
             <a id="get_jsonld_1-0-0" class="a_contentnegotiate" uri="https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/" version="1.0.0" accept="application/ld+json" fileext="onto.ttl" href="#">jsonld</a>
         </span></p>
         <h2>File resources</h2>
-        <ul id="fileresources">
-            <li><a href="https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/resources/HT_T.csv">https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/resources/HT_T.csv</a></li>
-            <li><a href="https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/resources/HT_T.csv">https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/resources/HT_T.csv</a></li>
-            <li><a href="https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/resources/46NT73.csv">https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/resources/46NT73.csv</a></li>
-        </ul>
+        <ul id="fileresources"></ul>
     </body>
 <html>
