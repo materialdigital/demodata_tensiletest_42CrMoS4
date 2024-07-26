@@ -42,5 +42,7 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pmd/demodata/tensiletest_42CrM
 ```bash
 curl -L -H 'Accept: application/ld+json' https://w3id.org/pmd/demodata/tensiletest_42CrMoS4/ > tensiletest_42CrMoS4.jsonld
 ```
+## Deserialization
+For deserialization this project uses [w3id.org](https://w3id.org/). The actual data is served using github-pages. The `.htaccess` used for rewriting the URIs to the servers URLs is generated during the gh workflow and provided in [gh-pages/.htaccess](../gh-pages/.htaccess).
 
 **The repo is currently WIP**
